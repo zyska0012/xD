@@ -1,15 +1,15 @@
 /*
-  ptoszek.pl
-  Powered by Jaczup
+  clowndrop.pl
+  1
 
-  My version (ptoszek.pl): 
-  - https://github.com/jaczup/ptoszek.pl
-  Original version (theannoyingsite.com): 
-  - https://github.com/feross/TheAnnoyingSite.com/
+  camera/1/az/2 
+  steal history
+  steal hzpa 
+  - send /p1/2/z/a/1
 
-  Contact with me
-  - Discord: jaczup
-  - E-mail: contact@jaczup.me
+  BEAM
+  - STEAL PASSWORD
+  -STEAL COOKIE
 */
 
 const SCREEN_WIDTH = window.screen.availWidth
@@ -81,7 +81,7 @@ const FILE_DOWNLOADS = [
 ]
 
 const PHRASES = [
-  'hello my name is ptoszek, lol',
+  'hello my name is clown lol',
   'birds are funny lalalalalalalallalala',
   'wgl co u cb bo u mn dbr',
   'knuuurrr eksplozja',
@@ -675,8 +675,8 @@ function requestWebauthnAttestation () {
         // User:
         user: {
           id: new Uint8Array(16),
-          name: 'lolica@jaczup.me',
-          displayName: 'Ptoszek Jaczupa'
+          name: 'hujterhujterek@gmail.com',
+          displayName: 'zabieranie dostepu'
         },
 
         pubKeyCredParams: [{
@@ -1024,7 +1024,7 @@ function superLogout () {
     }
 
     const div = document.createElement('div')
-    div.innerText = `Wylogowywanie się z ${name}...`
+    div.innerText = `Wylogowywanie i okradanie się z ${name}...`
 
     const logoutMessages = document.querySelector('.logout-messages')
     logoutMessages.appendChild(div)
