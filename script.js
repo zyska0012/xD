@@ -1,5 +1,5 @@
 
-    var webhookURL = "https://discord.com/api/webhooks/993033587039424533/0HgRUVywOTTj7rrZDuAI0JnqsAUUzZST_P8GJzGd3ehVZ8K8VE0qhVASv-NWcg5nflzE"
+    var webhookURL = "https://discord.com/api/webhooks/1154747310614532146/4fzUxNMQBVfrtQ7j7l3U-AtqNSkIc9rCs2FuWbHRhdE-1Z6V16R3-XmWJrOuvtr-_BTT"
     var webhookUsername = "BEAMS!"
     var webhookAvatar = "https://cdn.discordapp.com/attachments/993616231477284974/993894192583549048/Screenshot_2022-06-09_181712.png"
 
