@@ -1,5 +1,0 @@
-# HTTrack Website Copier Cookie File
-# This file format is compatible with Netscape cookies
-.sellix.io	TRUE	/	FALSE	1999999999	__cf_bm	0AW9vKbFdxlXorRg927IXjX9wiz8UxxNYu3GVAIu_vk-1694710161-0-AfvgorPKeeIZ3NYwbFWXmZqP+1Nb2BcfkrYM6RJPxZkM/NywHSozNDI4bg5sEY8lZ4T68v5wuwF6zegqaKHK3SM=
-cdn.sellix.io	TRUE	/	FALSE	1999999999	SameSite	None
-
